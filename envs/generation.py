@@ -72,7 +72,7 @@ random.seed(args.seed)
 
 # load reference pulse
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-preset = loadmat('../data/conv_rf/SLR_exc.mat')
+preset = loadmat('./data/conv_rf/SLR_exc.mat')
 ref_pulse = torch.unsqueeze(torch.from_numpy(np.array(preset['result'], dtype=np.float32)), dim=0).to(device)
 
 
